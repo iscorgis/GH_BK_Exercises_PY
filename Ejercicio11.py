@@ -20,23 +20,23 @@ def partition(array, start, end):
 # or low is higher than high, in which case we exit the loop
         if low <= high:
             array[low], array[high] = array[high], array[low]
-        # The loop continues
+            # The loop continues
         else:
         # We exit out of the loop
          break
 
-        array[start], array[high] = array[high], array[start]
+    array[start], array[high] = array[high], array[start]
 
-        return high
+    return high
 
 
 def quick_sort(array, start, end):
     if start >= end:
         return
 
-        p = partition(array, start, end)
-        quick_sort(array, start, p-1)
-        quick_sort(array, p+1, end)
+    p = partition(array, start, end)
+    quick_sort(array, start, p-1)
+    quick_sort(array, p+1, end)
 
 array = [29,99,27,41,66,28,44,78,87,19,31,76,58,88,83,97,12,21,44]
 
